@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e76f51;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .menu-item {
+            background: #f4a261;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            color: #264653;
+            font-weight: bold;
+        }
+        .menu-item button {
+            margin-top: 10px;
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-item button:hover {
+            background-color: #264653;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    <div class="menu-container">
+        <div class="menu-item">
+            <p>Butter Chicken - ₹250</p>
+            <button onclick="placeOrder('Butter Chicken')">Order Now</button>
+        </div>
+        <div class="menu-item">
+            <p>Paneer Tikka - ₹200</p>
+            <button onclick="placeOrder('Paneer Tikka')">Order Now</button>
+        </div>
+        <div class="menu-item">
+            <p>Biryani - ₹180</p>
+            <button onclick="placeOrder('Biryani')">Order Now</button>
+        </div>
+        <div class="menu-item">
+            <p>Chaat - ₹50</p>
+            <button onclick="placeOrder('Chaat')">Order Now</button>
+        </div>
+    </div>
+
+    <script>
+        function placeOrder(item) {
+            // Store selected item in localStorage
+            localStorage.setItem('orderedItem', item);
+            // Redirect to order confirmation page
+            window.location.href = 'order.html';
+        }
+    </script>
+</body>
+</html>
